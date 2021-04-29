@@ -83,7 +83,7 @@ footer{
     display: block; 
     width: 100%; 
     height: 150px; 
-    background-color: orange; 
+/*    background-color: orange; */ 
     position: absolute; 
 /*    bottom: 0; */ 
 } 
@@ -105,44 +105,84 @@ footer{
 */ 
 .footerGrid{ 
     display: grid; 
+    justify-content: center; 
     width: 100%; 
     height: 100px; 
-    grid-template-columns: 20% 20% 20% 20% 20%; 
+    grid-template-columns: 25% 50% 25%; 
     grid-template-rows: 1fr 1fr 1fr; 
     grid-template-areas: 
-    ". iconsTop logoFooter . ." 
-    ". . email . ." 
-    ". iconsBottom copyright . ."; 
+    "  iconsTop logo  ." 
+    ".  email  ." 
+    "  iconsBottom copyright  ."; 
 }  
 
 .logoFooter{ 
     grid-area: logo; 
-    background-color: gray; 
+    margin: auto; 
+} 
+
+.logoBox{ 
     width: 127px; 
     height: 37px; 
 } 
-
 .email{ 
-    display: block; 
+    display: flex; 
+    flex-direction: row; 
     grid-area: email; 
-    background-color: yellow; 
+    margin: auto; 
+} 
+
+.envelope{ 
+    display: inline-block; 
+    width: 10px; 
+    height: auto; 
+    color: #000000; 
+    margin-right: 5px; 
+} 
+.emailLink{ 
+    display: inline-block; 
+    font-size: 10px; 
+    text-decoration: none; 
+    color: #000000; 
 } 
 
 .copyright{ 
     display: block; 
     grid-area: copyright; 
-    background-color: blue; 
+    margin: auto; 
 } 
 
 .iconsTop{ 
-    display: block; 
-    grid-area: logoTop; 
-    background-color: green; 
+    display: flex; 
+    flex-direction: row; 
+    grid-area: iconsTop; 
+/*    background-color: green; */ 
+    justify-content: space-between; 
+    margin-right: 10px; 
+    margin-left: 10px; 
+} 
+
+.icon{ 
+    margin: 5px; 
+    margin-top: 10px; 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px;   
+    color: #000000; 
+} 
+
+.iconCircle{ 
+    margin: 5px; 
+    margin-top: 10px; 
+    display: inline-block; 
+    width: 25px; 
+    height: 25px;  
+    color: #ffffff; 
 } 
 
 .iconsBottom{ 
     display: block; 
-    grid-area: logoBottom; 
-    background-color: purple; 
+    grid-area: iconsBottom; 
+/*    background-color: purple; */ 
 } 
 

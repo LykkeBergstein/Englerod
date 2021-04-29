@@ -1,10 +1,18 @@
 //General information for sending request to WordPress 
-const apiUrl = "http://lykkebergstein.dk/wp-json/wp/v2"; 
+const apiUrl = "http://lykkebergstein.dk/wp-json"; 
+const apiUrlGET = "http://lykkebergstein.dk/wp-json/wp/v2"; 
 
 const apiUserInformation = { 
     "username": "api.user", 
     "password": "API-key-1234#!" 
 } ; 
+
+// errorMessage(msg) - displays error message
+function errorMessage(msg) {
+//    console.log(msg);
+}
+
+ 
 
 //Change navigation color 
 function changeTextColor() { 
@@ -48,17 +56,18 @@ xhttp.onreadystatechange = function() {
     } 
 } 
 
-xhttp.open('POST', `${apiUrl}/posts?status=private&per_page=50` , true); 
+xhttp.open('POST', `${apiUrl}/jwt-auth/v1/token` , true); 
 //Specify any request headers needed 
 xhttp.setRequestHeader('Content-Type', 'application/JSON'); 
 //Send the request 
 xhttp.send(JSON.stringify(apiUserInformation)); 
  //Omskriver JSON-objektet til string text 
  console.log(`Yay we have a token: ${window.localStorage.getItem("authToken")} `) ; 
-/* 
-xhttp.open('GET',  , true) ; 
+
+xhttp.open('GET', `${apiUrlGET}/posts?status=private&per_page=50`, true); 
 //Specify any necessary headers 
 xhttp.setRequestHeader('Authorization', `Bearer ${window.localStorage.getItem('authToken')}`) ; 
 //Send request 
 xhttp.send(); 
-*/ 
+console.log( 
+
