@@ -1,0 +1,145 @@
+
+/* Fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Poppins', sans-serif; 
+} 
+
+.credit{ 
+    font-size: 8px; 
+    width: 100%; 
+    text-align: center; 
+} 
+
+.headerContent{ 
+    margin-top: 25px; 
+    display: grid; 
+    grid-template-columns: 25% 50% 25%; 
+    grid-template-areas: 
+    '. logo search'; 
+} 
+/* 
+.headerContent{ 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    margin-top: 25px; 
+} 
+*/ 
+.logo{ 
+    display: flex; 
+    grid-area: logo; 
+    width: 100%; 
+    flex-direction: row; 
+    justify-content: center; 
+} 
+
+.logoCarrot{ 
+    display: block; 
+    width: 24px; 
+    height: 34px; 
+} 
+
+.logoText{ 
+    width: 127px; 
+    height: 37px; 
+} 
+
+.search{ 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    grid-area: search; 
+    margin-left: 30px; 
+} 
+
+
+.navigation{ 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    list-style: none; 
+    margin: 25px;   
+} 
+
+li{ 
+    font-size: 18px; 
+    font-style: italic; 
+/*    color: #000000; */ 
+    color: yellow; 
+} 
+
+.verticalLine{ 
+    display: block; 
+    width: 5px; 
+    height: 25px; 
+    border-right: solid 2px #A30900;  
+} 
+
+footer{  
+    display: block; 
+    width: 300px; 
+    height: 150px; 
+    background-color: orange; 
+} 
+/*
+.footerGrid{ 
+    display: grid; 
+    width: 100%; 
+    grid-template-columns: 25% 50% 25%; 
+    grid-template-areas: 
+    "iconsTop iconsTop iconsTop"; 
+} 
+
+.iconsTop{ 
+    display: block; 
+    grid-area: logoTop; 
+    background-color: green; 
+} 
+
+/* 
+.footerGrid{ 
+    display: grid; 
+    width: 100%; 
+    height: 100px; 
+    grid-template-columns: 20% 20% 20% 20% 20%; 
+    grid-template-areas: 
+    ". iconsTop logoFooter . ." 
+    ". . email . ." 
+    ". iconsBottom copyright . ."; 
+}  
+
+.logoFooter{ 
+    grid-area: logo; 
+    background-color: gray; 
+    width: 127px; 
+    height: 37px; 
+} 
+
+.email{ 
+    display: block; 
+    grid-area: email; 
+    background-color: yellow; 
+} 
+
+.copyright{ 
+    display: block; 
+    grid-area: copyright; 
+    background-color: blue; 
+} 
+
+.iconsTop{ 
+    display: block; 
+    grid-area: logoTop; 
+    background-color: green; 
+} 
+
+.iconsBottom{ 
+    display: block; 
+    grid-area: logoBottom; 
+    background-color: purple; 
+} 
+*/ 
