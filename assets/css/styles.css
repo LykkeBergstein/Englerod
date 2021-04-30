@@ -186,3 +186,21 @@ footer{
 /*    background-color: purple; */ 
 } 
 
+h1{ 
+    width: 100%; 
+    font-size: 20px; 
+    text-align: center; 
+} 
+
+.h2_opskriftindex{ 
+    width: 100%; 
+    font-size: 18px; 
+    text-align: center; 
+    font-style: italic; 
+    margin-top: 10px; 
+} 
+
+.opskriftindex_beskrivelse{ 
+    font-size: 14px; 
+    margin: 20px 36px; 
+} 

@@ -7,6 +7,7 @@ const apiUserInformation = {
     "password": "API-key-1234#!" 
 } ; 
 
+
 // errorMessage(msg) - displays error message
 function errorMessage(msg) {
 //    console.log(msg);
@@ -62,12 +63,48 @@ xhttp.setRequestHeader('Content-Type', 'application/JSON');
 //Send the request 
 xhttp.send(JSON.stringify(apiUserInformation)); 
  //Omskriver JSON-objektet til string text 
- console.log(`Yay we have a token: ${window.localStorage.getItem("authToken")} `) ; 
 
-xhttp.open('GET', `${apiUrlGET}/posts?status=private&per_page=50`, true); 
+function createPage() { 
+// console.log(`Yay we have a token: ${window.localStorage.getItem("authToken")} `) ; 
+
+    //Connect to the endpoint for all the vans(those are in private posts tagged as vans) 
+        //If successful 
+        const xhttp = new XMLHttpRequest(); 
+        //Where to send request 
+        xhttp.onreadystatechange = function() { 
+            if (this.readyState == 4 && this.status == 200) { 
+                try { 
+                const wordPressData = JSON.parse(this.response); 
+                //    console.log(siteData); 
+                    console.log(wordPressData); 
+                //    let newOption = document.createElement('option'); //Laver et tomt element 
+                    //    newOption.value = wordPressData.id; 
+                    //    newOption.text = wordPressData.acf.name; 
+                        loadPage(wordPressData); 
+                } catch (error) {   
+                    errorMessage(`Parsing error: ${error}`); 
+                } 
+            } 
+        } 
+/*     
+createPage(); */ 
+xhttp.open ('GET', `${apiUrlGET}/posts?status=private`, true); 
+/*
+xhttp.open('GET', `${apiUrlGET}/posts?status=private&per_page=50`, true); */ 
 //Specify any necessary headers 
 xhttp.setRequestHeader('Authorization', `Bearer ${window.localStorage.getItem('authToken')}`) ; 
 //Send request 
 xhttp.send(); 
-console.log( 
+    } 
+ 
+function loadPage(wordPressData) { 
+ //   document.querySelector("#content").innerHTML = ` 
 
+ //   `; 
+     
+    document.querySelector("#content").innerHTML = ` 
+        <h1> ${wordPressData[1].acf.opskrift} </h1>  
+        <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.underoverskrift} </h2> 
+        <article class="opskriftindex_beskrivelse"> ${wordPressData[1].acf.beskrivelse} </article> 
+        `; 
+} 
