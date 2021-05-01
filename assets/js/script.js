@@ -7,6 +7,7 @@ const apiUserInformation = {
     "password": "API-key-1234#!" 
 } ; 
 
+let wordPressData; 
 
 // errorMessage(msg) - displays error message
 function errorMessage(msg) {
@@ -16,17 +17,21 @@ function errorMessage(msg) {
  
 
 //Change navigation color 
-function changeTextColor() { 
-    if (document.getElementById ("opskrifter")) { 
+function changeTextColor(page) {  
+    if (page === "opskrifter") {  
         document.getElementById("opskrifter").style.color = "#A30900"; 
         document.getElementById("om").style.color = "#000000"; 
         document.getElementById("kontakt").style.color = "#000000"; 
-    } else if (document.getElementById ("om")) { 
+    } else if (page === "om") { 
         document.getElementById("om").style.color = "#A30900"; 
         document.getElementById("opskrifter").style.color = "#000000"; 
         document.getElementById("kontakt").style.color = "#000000"; 
-    } else if (document.getElementById ("kontakt")) { 
+    } else if (page === "kontakt") { 
         document.getElementById("kontakt").style.color = "#A30900"; 
+        document.getElementById("om").style.color = "#000000"; 
+        document.getElementById("opskrifter").style.color = "#000000"; 
+    } else if (page === "headerContent") { 
+        document.getElementById("kontakt").style.color = "#000000"; 
         document.getElementById("om").style.color = "#000000"; 
         document.getElementById("opskrifter").style.color = "#000000"; 
     } 
@@ -34,10 +39,23 @@ function changeTextColor() {
 //    case "opskrifter": 
         
 
-document.getElementById("opskrifter").onclick = changeTextColor; 
-document.getElementById("om").onclick = changeTextColor; 
-document.getElementById("kontakt").onclick = changeTextColor; 
-
+document.getElementById("opskrifter").addEventListener ("click", () => { 
+    changeTextColor("opskrifter"); 
+    loadOpskriftIndex(); 
+} ); 
+document.getElementById("om").addEventListener ("click", () => { 
+    loadAbout(); 
+    changeTextColor("om"); 
+} ); 
+document.getElementById("kontakt").addEventListener ("click", () => { 
+    loadContact(); 
+    changeTextColor("kontakt"); 
+    }    ); 
+document.getElementById("headerContent") .addEventListener("click", () => { 
+    changeTextColor("headerContent"); 
+    loadIndex(); 
+}); 
+ 
 //Send request to WordPress 
 const xhttp = new XMLHttpRequest() ; 
 //Specify what happens when done 
@@ -74,13 +92,13 @@ function createPage() {
         xhttp.onreadystatechange = function() { 
             if (this.readyState == 4 && this.status == 200) { 
                 try { 
-                const wordPressData = JSON.parse(this.response); 
+                wordPressData = JSON.parse(this.response); 
                 //    console.log(siteData); 
                     console.log(wordPressData); 
                 //    let newOption = document.createElement('option'); //Laver et tomt element 
                     //    newOption.value = wordPressData.id; 
                     //    newOption.text = wordPressData.acf.name; 
-                        loadPage(wordPressData); 
+                        loadIndex(wordPressData); 
                 } catch (error) {   
                     errorMessage(`Parsing error: ${error}`); 
                 } 
@@ -97,35 +115,13 @@ xhttp.setRequestHeader('Authorization', `Bearer ${window.localStorage.getItem('a
 xhttp.send(); 
     } 
 
-function loadPage(wordPressData) { 
-    document.querySelector("#content").innerHTML = ` 
-        <img class="omOsHeader" src="${wordPressData[2].acf.header_image.url}" alt="header image"> 
-        <article class="articleOmOs"> ${wordPressData[2].acf.textarea1} </article> 
-        <article class="articleOmOs"> ${wordPressData[2].acf.textarea2} </article> 
-        <article class="articleOmOs"> ${wordPressData[2].acf.textarea3} </article> 
-        <h2 class="blogindlægOverskrift"> ${wordPressData[2].acf.overskrift_kogeboger} </h2> 
-        <div class="kogebogEksempel"> 
-            <div class="arrowBox"> 
-                <img class="arrowLeft" src="${wordPressData[2].acf.kogebog_eksempel.arrowleft.url}" alt="pil til venstre"> 
-            </div> 
-            <img class="kogebogBillede" src="${wordPressData[2].acf.kogebog_eksempel.kogebog_billede1.url}" alt="Coveret til VEGANSK GRUNDKØKKEN"> 
-            <div class="arrowBox"> 
-                <img class="arrowRight" src="${wordPressData[2].acf.kogebog_eksempel.arrowright.url}" alt="pil til højre"> 
-            </div> 
-        </div> 
-        <br> 
-        <br> 
-        <br> 
-        <br> 
-        <br> 
-    `; 
-    /* 
+function loadIndex() { 
    document.querySelector("#content").innerHTML = ` 
     <img class="picture1" src="${wordPressData[0].acf.billede_johanne1.url}" alt="Johanne der står bag Englerod"> 
     <img class="picture2" src="${wordPressData[0].acf.billede_johanne2.url}" alt="Johanne Mosgaard"> 
     <h1> ${wordPressData[0].acf.overskrift} </h1> 
     <article class="indexBeskrivelse"> ${wordPressData[0].acf.beskrivelse} </article> 
-    <p class="linkOmOs"> ${wordPressData[0].acf.link_om_os} </p> 
+    <p id="linkOmOs"> ${wordPressData[0].acf.link_om_os} </p> 
     <h2 class="blogindlægOverskrift"> ${wordPressData[0].acf.blogindlaeg} </h2> 
     <div class="posts"> 
         <div class="post1"> 
@@ -172,10 +168,62 @@ function loadPage(wordPressData) {
     <br> 
     </div> 
    `; 
-     
-    document.querySelector("#content").innerHTML = ` 
-        <h1> ${wordPressData[1].acf.opskrift} </h1>  
-        <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.underoverskrift} </h2> 
-        <article class="opskriftindex_beskrivelse"> ${wordPressData[1].acf.beskrivelse} </article> 
-        `; */ 
+   document.getElementById("linkOmOs") .addEventListener("click", () => { 
+    loadAbout(); 
+    changeTextColor("om"); 
+}); 
 } 
+
+function loadContact() { 
+document.querySelector("#content").innerHTML = ` 
+        <div class="kontaktBeskrivelse"> 
+            <div class="kontaktTekst"> 
+                <h2 class="kontaktHeader"> ${wordPressData[3].acf.overskrift} </h2> 
+                <article class="articleKontakt"> ${wordPressData[3].acf.beskrivelse} </article> 
+            </div> 
+            <img class="billedeKontakt" src="${wordPressData[3].acf.billede.url}" alt="Johanne Mosgaard"> 
+        </div> 
+        <div class="kontaktformular"> 
+            <h2 class="blogindlægOverskrift"> ${wordPressData[3].acf.kontaktformular.overskrift} </h2> 
+            <form> 
+                <input type="text" name="Navn" placeholder="Navn" required>  
+                <input type="email" name="Email" placeholder="Email" required> 
+                <input type="text" id="textarea" placeholder="Skriv besked her" required> 
+                <input type="submit" value="Send"> 
+            </form> 
+            <br> 
+        </div> 
+    `; 
+} 
+
+    function loadAbout() { 
+    document.querySelector("#content").innerHTML = ` 
+        <img class="omOsHeader" src="${wordPressData[2].acf.header_image.url}" alt="header image"> 
+        <article class="articleOmOs"> ${wordPressData[2].acf.textarea1} </article> 
+        <article class="articleOmOs"> ${wordPressData[2].acf.textarea2} </article> 
+        <article class="articleOmOs"> ${wordPressData[2].acf.textarea3} </article> 
+        <h2 class="blogindlægOverskrift"> ${wordPressData[2].acf.overskrift_kogeboger} </h2> 
+        <div class="kogebogEksempel"> 
+            <div class="arrowBox"> 
+                <img class="arrowLeft" src="${wordPressData[2].acf.kogebog_eksempel.arrowleft.url}" alt="pil til venstre"> 
+            </div> 
+            <img class="kogebogBillede" src="${wordPressData[2].acf.kogebog_eksempel.kogebog_billede1.url}" alt="Coveret til VEGANSK GRUNDKØKKEN"> 
+            <div class="arrowBox"> 
+                <img class="arrowRight" src="${wordPressData[2].acf.kogebog_eksempel.arrowright.url}" alt="pil til højre"> 
+            </div> 
+        </div> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+    `; 
+    } 
+    
+    function loadOpskriftIndex() { 
+    document.querySelector("#content").innerHTML = ` 
+    <h1> ${wordPressData[1].acf.overskrift} </h1>  
+    <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.underoverskrift} </h2> 
+    <article class="opskriftindex_beskrivelse"> ${wordPressData[1].acf.beskrivelse} </article> 
+    `; 
+    } 

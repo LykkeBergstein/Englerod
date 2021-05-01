@@ -17,7 +17,7 @@ body{
     text-align: center; 
 } 
 
-.headerContent{ 
+#headerContent{ 
     margin-top: 25px; 
     display: grid; 
     grid-template-columns: 25% 50% 25%; 
@@ -71,9 +71,7 @@ body{
 li{ 
     font-size: 18px; 
     font-style: italic; 
-/*    color: #000000; */ 
-    color: yellow; 
-} 
+}  
 
 .verticalLine{ 
     display: block; 
@@ -214,7 +212,7 @@ h1{
     margin: 15px 36px 5px 36px; 
 } 
 
-.linkOmOs{ 
+#linkOmOs{ 
     display: block; 
     width: 100%; 
     text-align: center; 
@@ -319,4 +317,59 @@ h1{
     display: inline-block; 
     width: 200px; 
     height: 278.17px; 
+} 
+
+.kontaktBeskrivelse{ 
+    display: block; 
+    width: 100%; 
+    margin: 0 36px; 
+} 
+
+.kontaktHeader{ 
+    display: block; 
+    font-size: 20px; 
+    margin-bottom: 15px; 
+} 
+.billedeKontakt{ 
+    display: inline-block; 
+    width: 135px; 
+    height: auto; 
+} 
+
+.kontaktTekst{ 
+    display: inline-block; 
+    width: 175px; 
+    text-align: left; 
+} 
+
+.articleKontakt{ 
+    font-size: 14px; 
+} 
+
+.kontaktformular{ 
+    display: block; 
+    width: 100%; 
+    justify-content: center; 
+} 
+
+form{ 
+    display: block; 
+    width: 167.2px; 
+    margin: auto; 
+} 
+
+#textarea{ 
+    height: 155px; 
+    text-align: top; 
+} 
+
+input[type="text"] { 
+    margin: 10px 0; 
+} 
+
+input[type="submit"] { 
+    display: block; 
+    width: 167.2px; 
+    color: #ffffff; 
+    background-color: #000000; 
 } 
