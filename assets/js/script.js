@@ -98,13 +98,55 @@ xhttp.send();
     } 
  
 function loadPage(wordPressData) { 
- //   document.querySelector("#content").innerHTML = ` 
-
- //   `; 
-     
+   document.querySelector("#content").innerHTML = ` 
+    <img class="picture1" src="${wordPressData[0].acf.billede_johanne1.url}" alt="Johanne der står bag Englerod"> 
+    <img class="picture2" src="${wordPressData[0].acf.billede_johanne2.url}" alt="Johanne Mosgaard"> 
+    <h1> ${wordPressData[0].acf.overskrift} </h1> 
+    <article class="indexBeskrivelse"> ${wordPressData[0].acf.beskrivelse} </article> 
+    <p class="linkOmOs"> ${wordPressData[0].acf.link_om_os} </p> 
+    <h2 class="blogindlægOverskrift"> ${wordPressData[0].acf.blogindlaeg} </h2> 
+    <div class="posts"> 
+        <div class="post1"> 
+            <img class="post1image" src="${wordPressData[0].acf.blogindlaeg_posts.post1.post_billede.url}" alt="spidskålssalat"> 
+            <div class="post1text"> 
+                <h3 class="post1Overskrift"> ${wordPressData[0].acf.blogindlaeg_posts.post1.navn} </h3>   
+                <p class="postBeskrivelse"> ${wordPressData[0].acf.blogindlaeg_posts.post1.post_beskrivelse} </p> 
+            </div> 
+        </div> 
+    </div> 
+    <br> 
+        <div class="posts"> 
+            <div class="post1"> 
+            <img class="post1image" src="${wordPressData[0].acf.blogindlaeg_posts.post2.post_billede.url}" alt="snobrød">  
+            <div class="post1text"> 
+                <h3 class="post1Overskrift"> ${wordPressData[0].acf.blogindlaeg_posts.post2.navn} </h3>  
+                <p class="postBeskrivelse"> ${wordPressData[0].acf.blogindlaeg_posts.post2.post_beskrivelse} </p> 
+            </div> 
+        </div> 
+    </div> 
+    <br> 
+        <div class="posts"> 
+            <div class="post1"> 
+            <img class="post1image" src="${wordPressData[0].acf.blogindlaeg_posts.post3.post_billede.url}" alt="spidskålssalat"> 
+            <div class="post1text"> 
+                <h3 class="post1Overskrift"> ${wordPressData[0].acf.blogindlaeg_posts.post3.navn} </h3>  
+                <p class="postBeskrivelse"> ${wordPressData[0].acf.blogindlaeg_posts.post3.post_beskrivelse} </p> 
+            </div> 
+        </div> 
+    </div> 
+    </div> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    </div> 
+   `; 
+/*      
     document.querySelector("#content").innerHTML = ` 
         <h1> ${wordPressData[1].acf.opskrift} </h1>  
         <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.underoverskrift} </h2> 
         <article class="opskriftindex_beskrivelse"> ${wordPressData[1].acf.beskrivelse} </article> 
-        `; 
+        `; */ 
 } 
