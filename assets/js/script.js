@@ -96,8 +96,30 @@ xhttp.setRequestHeader('Authorization', `Bearer ${window.localStorage.getItem('a
 //Send request 
 xhttp.send(); 
     } 
- 
+
 function loadPage(wordPressData) { 
+    document.querySelector("#content").innerHTML = ` 
+        <img class="omOsHeader" src="${wordPressData[2].acf.header_image.url}" alt="header image"> 
+        <article class="articleOmOs"> ${wordPressData[2].acf.textarea1} </article> 
+        <article class="articleOmOs"> ${wordPressData[2].acf.textarea2} </article> 
+        <article class="articleOmOs"> ${wordPressData[2].acf.textarea3} </article> 
+        <h2 class="blogindlægOverskrift"> ${wordPressData[2].acf.overskrift_kogeboger} </h2> 
+        <div class="kogebogEksempel"> 
+            <div class="arrowBox"> 
+                <img class="arrowLeft" src="${wordPressData[2].acf.kogebog_eksempel.arrowleft.url}" alt="pil til venstre"> 
+            </div> 
+            <img class="kogebogBillede" src="${wordPressData[2].acf.kogebog_eksempel.kogebog_billede1.url}" alt="Coveret til VEGANSK GRUNDKØKKEN"> 
+            <div class="arrowBox"> 
+                <img class="arrowRight" src="${wordPressData[2].acf.kogebog_eksempel.arrowright.url}" alt="pil til højre"> 
+            </div> 
+        </div> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+    `; 
+    /* 
    document.querySelector("#content").innerHTML = ` 
     <img class="picture1" src="${wordPressData[0].acf.billede_johanne1.url}" alt="Johanne der står bag Englerod"> 
     <img class="picture2" src="${wordPressData[0].acf.billede_johanne2.url}" alt="Johanne Mosgaard"> 
@@ -135,6 +157,13 @@ function loadPage(wordPressData) {
         </div> 
     </div> 
     </div> 
+
+    <div class="videos"> 
+        <h2 class="blogindlægOverskrift"> ${wordPressData[0].acf.videoer.overskrift} </h2> 
+        <img class="videoImage" src="${wordPressData[0].acf.videoer.video1.url}" alt="video thumbnail"> 
+        <img class="videoImage" src="${wordPressData[0].acf.videoer.video2.url}" alt="video thumbnail"> 
+        <img class="videoImage" src="${wordPressData[0].acf.videoer.video3.url}" alt="video thumbnail"> 
+    </div> 
     <br> 
     <br> 
     <br> 
@@ -143,7 +172,7 @@ function loadPage(wordPressData) {
     <br> 
     </div> 
    `; 
-/*      
+     
     document.querySelector("#content").innerHTML = ` 
         <h1> ${wordPressData[1].acf.opskrift} </h1>  
         <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.underoverskrift} </h2> 

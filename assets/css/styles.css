@@ -269,3 +269,54 @@ h1{
 .postBeskrivelse{ 
     font-size: 12px; 
 } 
+
+.videoImage{ 
+    display: block; 
+    width: 303px; 
+    height: auto; 
+    margin: 20px 36px; 
+} 
+
+.omOsHeader{ 
+    display: block; 
+    width: 303px; 
+    height: auto; 
+    margin: 20px 36px; 
+} 
+
+.articleOmOs{ 
+    display: block; 
+    width: 303px; 
+    margin: 20px 36px; 
+    font-size: 14px; 
+} 
+
+.kogebogEksempel{ 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+} 
+
+.arrowBox{ 
+    height: 278.14px; 
+    margin-top: 124.07px; 
+} 
+.arrowLeft{ 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    margin-right: 5px; 
+} 
+
+.arrowRight{ 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    margin-left: 5px; 
+} 
+
+.kogebogBillede{ 
+    display: inline-block; 
+    width: 200px; 
+    height: 278.17px; 
+} 
