@@ -299,21 +299,21 @@ h1{
     height: 278.14px; 
     margin-top: 124.07px; 
 } 
-.arrowLeft{ 
+#arrowLeft{ 
     display: inline-block; 
     width: 30px; 
     height: 30px; 
     margin-right: 5px; 
 } 
 
-.arrowRight{ 
+#arrowRight{ 
     display: inline-block; 
     width: 30px; 
     height: 30px; 
     margin-left: 5px; 
 } 
 
-.kogebogBillede{ 
+#kogebogBillede{ 
     display: inline-block; 
     width: 200px; 
     height: 278.17px; 

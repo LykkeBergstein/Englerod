@@ -8,7 +8,7 @@ const apiUserInformation = {
 } ; 
 
 let wordPressData; 
-
+let kogebog_billede_nummer = 1; 
 // errorMessage(msg) - displays error message
 function errorMessage(msg) {
 //    console.log(msg);
@@ -205,11 +205,11 @@ document.querySelector("#content").innerHTML = `
         <h2 class="blogindlægOverskrift"> ${wordPressData[2].acf.overskrift_kogeboger} </h2> 
         <div class="kogebogEksempel"> 
             <div class="arrowBox"> 
-                <img class="arrowLeft" src="${wordPressData[2].acf.kogebog_eksempel.arrowleft.url}" alt="pil til venstre"> 
+                <img id="arrowLeft" src="${wordPressData[2].acf.kogebog_eksempel.arrowleft.url}" alt="pil til venstre"> 
             </div> 
-            <img class="kogebogBillede" src="${wordPressData[2].acf.kogebog_eksempel.kogebog_billede1.url}" alt="Coveret til VEGANSK GRUNDKØKKEN"> 
+            <img id="kogebogBillede" src="${wordPressData[2].acf.kogebog_eksempel.kogebog_billede1.url}" alt="Coveret til VEGANSK GRUNDKØKKEN"> 
             <div class="arrowBox"> 
-                <img class="arrowRight" src="${wordPressData[2].acf.kogebog_eksempel.arrowright.url}" alt="pil til højre"> 
+                <img id="arrowRight" src="${wordPressData[2].acf.kogebog_eksempel.arrowright.url}" alt="pil til højre"> 
             </div> 
         </div> 
         <br> 
@@ -218,8 +218,18 @@ document.querySelector("#content").innerHTML = `
         <br> 
         <br> 
     `; 
-    } 
+    document.getElementById ("arrowLeft") .addEventListener("click", () => { 
+        kogebog_billede_nummer - 1 === 0 ? kogebog_billede_nummer = 3 : kogebog_billede_nummer-- 
+        document.getElementById ("kogebogBillede") .src= `${wordPressData[2].acf.kogebog_eksempel["kogebog_billede" + kogebog_billede_nummer].url}` ; 
+    }); 
     
+
+    document.getElementById ("arrowRight") .addEventListener("click", () => { 
+        kogebog_billede_nummer + 1 === 4 ? kogebog_billede_nummer = 1 : kogebog_billede_nummer++ 
+        document.getElementById ("kogebogBillede") .src= `${wordPressData[2].acf.kogebog_eksempel["kogebog_billede" + kogebog_billede_nummer].url}` ; 
+    }); 
+    } 
+
     function loadOpskriftIndex() { 
     document.querySelector("#content").innerHTML = ` 
     <h1> ${wordPressData[1].acf.overskrift} </h1>  
