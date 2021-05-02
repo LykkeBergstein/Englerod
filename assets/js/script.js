@@ -217,7 +217,7 @@ document.querySelector("#content").innerHTML = `
         <br> 
         <br> 
         <br> 
-    `; 
+    `;  
     document.getElementById ("arrowLeft") .addEventListener("click", () => { 
         kogebog_billede_nummer - 1 === 0 ? kogebog_billede_nummer = 3 : kogebog_billede_nummer-- 
         document.getElementById ("kogebogBillede") .src= `${wordPressData[2].acf.kogebog_eksempel["kogebog_billede" + kogebog_billede_nummer].url}` ; 
