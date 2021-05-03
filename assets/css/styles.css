@@ -393,10 +393,11 @@ input[type="submit"] {
     color: #ffffff; 
     background-color: #000000; 
 }
-
+/*opskrift i sig selv*/
 .recipename {
     margin-left: 40px;
     width: 300px;
+    text-align: left;
 }
 
 
@@ -464,6 +465,8 @@ input[type="submit"] {
     text-align: left;
     margin-left: 40px;
 }
+
+/*subpage opskriftindex*/
 
 
 
