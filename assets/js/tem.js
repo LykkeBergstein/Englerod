@@ -217,7 +217,7 @@ document.querySelector("#content").innerHTML = `
             </div> 
         </div> 
         <br> 
-        <br>  
+        <br> 
         <br> 
         <br> 
         <br> 
@@ -261,6 +261,7 @@ document.querySelector("#content").innerHTML = `
         </div> 
     </div> 
 
+
     <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.efterar.efterar_overskrift} </h2> 
     <div class="fallBox">   
         <div class="arrowBoxIndex"> 
@@ -283,7 +284,6 @@ document.querySelector("#content").innerHTML = `
         </div> 
     </div> 
     `; 
-
     document.getElementById ("leftIndex") .addEventListener("click", () => { 
         forar_kategori - 1 === 0 ? forar_kategori = 10 : forar_kategori-- 
         document.getElementById ("retForar") .src= `${wordPressData[1].acf.forar.forar_billede["kategori" + forar_kategori].billede.url}` ; 
@@ -293,35 +293,7 @@ document.querySelector("#content").innerHTML = `
         forar_kategori + 1 === 11 ? forar_kategori = 1 : forar_kategori++  
         document.getElementById ("retForar") .src= `${wordPressData[1].acf.forar.forar_billede["kategori" + forar_kategori].billede.url}` ;  
     }); 
-    document.getElementById ("leftIndexSummer") .addEventListener("click", () => { 
-        sommer_kategori - 1 === 0 ? sommer_kategori = 10 : sommer_kategori-- 
-        document.getElementById ("retSommer") .src= `${wordPressData[1].acf.sommer.sommer_billede["kategori" + sommer_kategori].billede.url}` ; 
-    }); 
-    
-    document.getElementById ("rightIndexSummer") .addEventListener("click", () => { 
-        sommer_kategori + 1 === 11 ? sommer_kategori = 1 : sommer_kategori++ 
-        document.getElementById ("retSommer") .src= `${wordPressData[1].acf.sommer.sommer_billede["kategori" + sommer_kategori].billede.url}` ;  
-    }); 
 
-    document.getElementById ("leftIndexFall") .addEventListener("click", () => { 
-        efterar_kategori - 1 === 0 ? efterar_kategori = 10 : efterar_kategori-- 
-        document.getElementById ("retEfterar") .src= `${wordPressData[1].acf.efterar.efterar_billede["kategori" + efterar_kategori].billede.url}` ; 
-    }); 
-    
-    document.getElementById ("rightIndexFall") .addEventListener("click", () => { 
-        efterar_kategori + 1 === 11 ? efterar_kategori = 1 : efterar_kategori++ 
-        document.getElementById ("retEfterar") .src= `${wordPressData[1].acf.efterar.efterar_billede["kategori" + efterar_kategori].billede.url}` ;   
-    }); 
-
-    document.getElementById ("leftIndexWinter") .addEventListener("click", () => { 
-        vinter_kategori - 1 === 0 ? vinter_kategori = 11 : vinter_kategori-- 
-        document.getElementById ("retVinter") .src= `${wordPressData[1].acf.vinter.vinter_billede["kategori" + vinter_kategori].billede.url}` ; 
-    }); 
-    
-    document.getElementById ("rightIndexWinter") .addEventListener("click", () => { 
-        vinter_kategori + 1 === 12 ? vinter_kategori = 1 : vinter_kategori++ 
-        document.getElementById ("retVinter") .src= `${wordPressData[1].acf.vinter.vinter_billede["kategori" + vinter_kategori].billede.url}` ; 
-    }); 
     /* Forsøg på at lave subpages med forskellige kategorier baseret på årstiden */ 
     document.getElementById("retForar").addEventListener("click", () => { 
         tags = { 
@@ -344,51 +316,9 @@ document.querySelector("#content").innerHTML = `
         loadSubpage (tags["Forår"], tags[wordPressData[1].acf.forar.forar_billede["kategori" + forar_kategori].kategori]) 
     } ); 
 
-    
-    document.getElementById("retSommer").addEventListener("click", () => { 
-        tags = { 
-            "Søde sager" : 28, 
-            "Glutenfri": 27, 
-            "Bagværk": 26, 
-            "Tilbehør": 25, 
-            "Grøn jul": 24, 
-            "Drikke":  22, 
-            "Efterår": 15, 
-            "Forår": 13, 
-            "Mindre retter": 20, 
-            "Morgenmad": 19, 
-            "Salater": 23, 
-            "Sommer": 14, 
-            "Store måltider": 16, 
-            "Supper": 21, 
-            "Vinter": 18 
-        }; 
-        loadSubpage (tags["Sommer"], tags[wordPressData[1].acf.sommer.sommer_billede["kategori" + sommer_kategori].kategori]) 
-    } ); 
-
-    document.getElementById("retEfterar").addEventListener("click", () => {  
-        tags = { 
-            "Søde sager" : 28, 
-            "Glutenfri": 27, 
-            "Bagværk": 26, 
-            "Tilbehør": 25, 
-            "Grøn jul": 24, 
-            "Drikke":  22, 
-            "Efterår": 15, 
-            "Forår": 13, 
-            "Mindre retter": 20, 
-            "Morgenmad": 19, 
-            "Salater": 23, 
-            "Sommer": 14, 
-            "Store måltider": 16, 
-            "Supper": 21, 
-            "Vinter": 18 
-        }; 
-        loadSubpage (tags["Efterår"], tags[wordPressData[1].acf.efterar.efterar_billede["kategori" + efterar_kategori].kategori]) 
-    } ); 
     } 
 
-
+    
     function loadSubpage (season, dish) { 
         document.querySelector("#content").innerHTML = ` 
             <h1 class="opOverskrift">  </h1> 
@@ -406,62 +336,8 @@ document.querySelector("#content").innerHTML = `
                     <p class="pris">  </p> 
                 </div> ` 
                 document.getElementById (`${page.acf.recipe_name}`) .addEventListener("click", () => { 
-                    loadopskrift(); 
+
                 } ); 
             } 
         } ); 
     } 
-
-    function loadopskrift () {
-        document.querySelector("#content").innerHTML = `
-    <h1 class="recipename"> ${wordPressData[4].acf.recipe_name} </h1>
-    <h4 class="name_of_author"> ${wordPressData[4].acf.author}</h4>
-    <p class="antal_personer"> ${wordPressData[4].acf.antal} </p> 
-    <img class="picture_of_dish" src="${wordPressData[4].acf.picture_of_dish.url}" alt="picture of dish">
-    
-    <div>
-        <p class="forberedelsestid"> ${wordPressData[4].acf.tid.forberedelsestid}</p>
-        <p class="tilberedningstid"> ${wordPressData[4].acf.tid.tilberedningstid}</p>
-        <p class="samlet_tid"> ${wordPressData[4].acf.tid.samlet_tid}</p>
-    </div>
-    
-        <h1 class="overskrift_ingrediens">${wordPressData[4].acf.ingredienser.overskrift}</h1>
-        <ul class="ingrediensgruppe"> 
-            <li class="ingrediens1"> ${wordPressData[4].acf.ingredienser.ingrediens1}</li>
-            <li class="ingrediens2"> ${wordPressData[4].acf.ingredienser.ingrediens2}</li>
-            <li class="ingrediens3"> ${wordPressData[4].acf.ingredienser.ingrediens3}</li>
-            <li class="ingrediens4"> ${wordPressData[4].acf.ingredienser.ingrediens4}</li>
-            <li class="ingrediens5"> ${wordPressData[4].acf.ingredienser.ingrediens5}</li>
-            <li class="ingrediens6"> ${wordPressData[4].acf.ingredienser.ingrediens6}</li>
-            <li class="ingrediens7"> ${wordPressData[4].acf.ingredienser.ingrediens7}</li>
-            <li class="ingrediens8"> ${wordPressData[4].acf.ingredienser.ingrediens8}</li>
-            <li class="ingrediens9"> ${wordPressData[4].acf.ingredienser.ingrediens9}</li>
-            <li class="ingrediens10"> ${wordPressData[4].acf.ingredienser.ingrediens10}</li>
-            <li class="ingrediens11"> ${wordPressData[4].acf.ingredienser.ingrediens11}</li>
-            <li class="ingrediens12"> ${wordPressData[4].acf.ingredienser.ingrediens12}</li>
-            <li class="ingrediens13"> ${wordPressData[4].acf.ingredienser.ingrediens13}</li>
-            <li class="ingrediens14"> ${wordPressData[4].acf.ingredienser.ingrediens14}</li>
-        </ul>
-
-    <div class="fremgangsmade">
-        <h2 class="overskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.overskrift}</h2>
-        <h3 class="underoverskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.underoverskrift}</h3>
-            <ol>
-                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step1}</li><br>
-                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step2}</li><br>
-            </ol>
-        <h3 class="underoverskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.underoverskrift1}</h3>
-            <ol>
-                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step3}</li><br>
-                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step4}</li><br>
-            </ol>
-    </div>
-
-    <div class="tips">
-    <h3 class="tips_overskrift"> ${wordPressData[4].acf.tips.overskrift}</h3>
-    <p class="tips_felt"> ${wordPressData[4].acf.tips.tips_felt}</p>
-    </div>
-    `; 
-    } 
-
-     
