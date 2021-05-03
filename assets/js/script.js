@@ -213,7 +213,7 @@ document.querySelector("#content").innerHTML = `
             </div> 
         </div> 
         <br> 
-        <br> 
+        <br>  
         <br> 
         <br> 
         <br> 
