@@ -282,4 +282,38 @@ document.querySelector("#content").innerHTML = `
     `; 
     } 
 
+    function loadopskrift () {
+        document.querySelector("#content").innerHTML = `
+    <h1 class="recipename"> ${wordPressData[4].acf.recipe_name} </h1>
+    <h2 class="name_of_author"> ${wordPressData[4].acf.author}</h2>
+    <p class="antal_personer"> ${wordPressData[4].acf.antal} </p> 
+    <img class="picture_of_dish" src="${wordPressData[4].acf.picture_of_dish.url}" alt="picture of dish">
     
+    <div>
+        <p class="forberedelsestid"> ${wordPressData[4].acf.tid.forberedelsestid}</p>
+        <p class="tilberedningstid"> ${wordPressData[4].acf.tid.tilberedningstid}</p>
+        <p class="samlet_tid"> ${wordPressData[4].acf.tid.samlet_tid}</p>
+    </div>
+
+    <div class="ingredientsgruppe"> 
+        <p class="ingrediens1"> ${wordPressData[4].acf.ingredienser.ingrediens1}</p>
+        <p class="ingrediens2"> ${wordPressData[4].acf.ingredienser.ingrediens2}</p>
+        <p class="ingrediens3"> ${wordPressData[4].acf.ingredienser.ingrediens3}</p>
+        <p class="ingrediens4"> ${wordPressData[4].acf.ingredienser.ingrediens4}</p>
+        <p class="ingrediens5"> ${wordPressData[4].acf.ingredienser.ingrediens5}</p>
+        <p class="ingrediens6"> ${wordPressData[4].acf.ingredienser.ingrediens6}</p>
+        <p class="ingrediens7"> ${wordPressData[4].acf.ingredienser.ingrediens7}</p>
+        <p class="ingrediens8"> ${wordPressData[4].acf.ingredienser.ingrediens8}</p>
+        <p class="ingrediens9"> ${wordPressData[4].acf.ingredienser.ingrediens9}</p>
+        <p class="ingrediens10"> ${wordPressData[4].acf.ingredienser.ingrediens10}</p>
+        <p class="ingrediens11"> ${wordPressData[4].acf.ingredienser.ingrediens11}</p>
+        <p class="ingrediens12"> ${wordPressData[4].acf.ingredienser.ingrediens12}</p>
+        <p class="ingrediens13"> ${wordPressData[4].acf.ingredienser.ingrediens13}</p>
+        <p class="ingrediens14"> ${wordPressData[4].acf.ingredienser.ingrediens14}</p>
+    </div>
+
+    <div class="fremgangsmade">
+    
+    </div>
+    `; 
+    } 
