@@ -400,10 +400,12 @@ document.querySelector("#content").innerHTML = `
                 <div class="opBox" id="${page.acf.recipe_name}" > 
                     <h3 class="opHeader"> ${page.acf.recipe_name}  </h3> 
                     <img class="opImage" src="${page.acf.picture_of_dish.url}" alt="picture of dish" > 
-                    <p class="antal"> ${page.acf.antal} </p> 
-                    <p class="forberedelse"> ${page.acf.tid.forberedelsestid} </p> 
-                    <p class="samlet"> ${page.acf.tid.samlet_tid} </p> 
-                    <p class="pris">  </p> 
+                   <li class="tidsliste">
+                    <ul class="antal"> Antal personer: ${page.acf.antal} </ul> 
+                    <ul class="forberedelse"> Forberedelses tid: ${page.acf.tid.forberedelsestid} </ul> 
+                    <ul class="samlet"> Samlet tid: ${page.acf.tid.samlet_tid} </ul> 
+                    <ul class="pris">  </ul> 
+                    </li>
                 </div> ` 
                 document.getElementById (`${page.acf.recipe_name}`) .addEventListener("click", () => { 
                     loadopskrift(); 
