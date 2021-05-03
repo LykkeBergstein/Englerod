@@ -61,7 +61,7 @@ document.getElementById("headerContent") .addEventListener("click", () => {
 }); 
  
 //Send request to WordPress 
-const xhttp = new XMLHttpRequest() ; 
+const xhttp = new XMLHttpsRequest() ; 
 //Specify what happens when done 
 xhttp.onreadystatechange = function() { 
     if (this.readyState == 4 && this.status == 200) { 
@@ -91,7 +91,7 @@ function createPage() {
 
     //Connect to the endpoint for all the vans(those are in private posts tagged as vans) 
         //If successful 
-        const xhttp = new XMLHttpRequest(); 
+        const xhttp = new XMLHttpsRequest(); 
         //Where to send request 
         xhttp.onreadystatechange = function() { 
             if (this.readyState == 4 && this.status == 200) { 
