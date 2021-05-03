@@ -245,5 +245,39 @@ document.querySelector("#content").innerHTML = `
             <img id="rightIndex" src="${wordPressData[1].acf.forar.arrowRight.url}" alt="pil til højre"> 
         </div> 
     </div> 
+
+    <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.sommer.sommer_overskrift} </h2> 
+    <div class="summerBox">  
+        <div class="arrowBoxIndex"> 
+            <img id="leftIndexSummer" src="${wordPressData[1].acf.sommer.arrowLeft.url}" alt="pil til venstre"> 
+        </div> 
+        <img id="retSommer" src="${wordPressData[1].acf.sommer.sommer_billede.kategori1.billede.url}" alt="kategori"> 
+        <div class="arrowBoxIndex"> 
+            <img id="rightIndexSummer" src="${wordPressData[1].acf.sommer.arrowRight.url}" alt="pil til højre"> 
+        </div> 
+    </div> 
+
+
+    <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.efterar.efterar_overskrift} </h2> 
+    <div class="fallBox">   
+        <div class="arrowBoxIndex"> 
+            <img id="leftIndexFall" src="${wordPressData[1].acf.efterar.arrowLeft.url}" alt="pil til venstre"> 
+        </div> 
+        <img id="retEfterar" src="${wordPressData[1].acf.efterar.efterar_billede.kategori1.billede.url}" alt="kategori"> 
+        <div class="arrowBoxIndex"> 
+            <img id="rightIndexFall" src="${wordPressData[1].acf.efterar.arrowRight.url}" alt="pil til højre"> 
+        </div> 
+    </div> 
+
+    <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.vinter.vinter_overskrift} </h2> 
+    <div class="winterBox">    
+        <div class="arrowBoxIndex"> 
+            <img id="leftIndexWinter" src="${wordPressData[1].acf.vinter.arrowLeft.url}" alt="pil til venstre"> 
+        </div> 
+        <img id="retVinter" src="${wordPressData[1].acf.sommer.sommer_billede.kategori1.billede.url}" alt="kategori"> 
+        <div class="arrowBoxIndex"> 
+            <img id="rightIndexWinter" src="${wordPressData[1].acf.vinter.arrowRight.url}" alt="pil til højre"> 
+        </div> 
+    </div> 
     `; 
     } 
