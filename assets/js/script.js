@@ -294,33 +294,36 @@ document.querySelector("#content").innerHTML = `
         <p class="tilberedningstid"> ${wordPressData[4].acf.tid.tilberedningstid}</p>
         <p class="samlet_tid"> ${wordPressData[4].acf.tid.samlet_tid}</p>
     </div>
-
-    <div class="ingredientsgruppe"> 
-        <p class="ingrediens1"> ${wordPressData[4].acf.ingredienser.ingrediens1}</p>
-        <p class="ingrediens2"> ${wordPressData[4].acf.ingredienser.ingrediens2}</p>
-        <p class="ingrediens3"> ${wordPressData[4].acf.ingredienser.ingrediens3}</p>
-        <p class="ingrediens4"> ${wordPressData[4].acf.ingredienser.ingrediens4}</p>
-        <p class="ingrediens5"> ${wordPressData[4].acf.ingredienser.ingrediens5}</p>
-        <p class="ingrediens6"> ${wordPressData[4].acf.ingredienser.ingrediens6}</p>
-        <p class="ingrediens7"> ${wordPressData[4].acf.ingredienser.ingrediens7}</p>
-        <p class="ingrediens8"> ${wordPressData[4].acf.ingredienser.ingrediens8}</p>
-        <p class="ingrediens9"> ${wordPressData[4].acf.ingredienser.ingrediens9}</p>
-        <p class="ingrediens10"> ${wordPressData[4].acf.ingredienser.ingrediens10}</p>
-        <p class="ingrediens11"> ${wordPressData[4].acf.ingredienser.ingrediens11}</p>
-        <p class="ingrediens12"> ${wordPressData[4].acf.ingredienser.ingrediens12}</p>
-        <p class="ingrediens13"> ${wordPressData[4].acf.ingredienser.ingrediens13}</p>
-        <p class="ingrediens14"> ${wordPressData[4].acf.ingredienser.ingrediens14}</p>
-    </div>
+        <h1 class="overskrift_ingrediens">${wordPressData[4].acf.ingredienser.overskrift}</h1>
+        <ul class="ingrediensgruppe"> 
+            <li class="ingrediens1"> ${wordPressData[4].acf.ingredienser.ingrediens1}</li>
+            <li class="ingrediens2"> ${wordPressData[4].acf.ingredienser.ingrediens2}</li>
+            <li class="ingrediens3"> ${wordPressData[4].acf.ingredienser.ingrediens3}</li>
+            <li class="ingrediens4"> ${wordPressData[4].acf.ingredienser.ingrediens4}</li>
+            <li class="ingrediens5"> ${wordPressData[4].acf.ingredienser.ingrediens5}</li>
+            <li class="ingrediens6"> ${wordPressData[4].acf.ingredienser.ingrediens6}</li>
+            <li class="ingrediens7"> ${wordPressData[4].acf.ingredienser.ingrediens7}</li>
+            <li class="ingrediens8"> ${wordPressData[4].acf.ingredienser.ingrediens8}</li>
+            <li class="ingrediens9"> ${wordPressData[4].acf.ingredienser.ingrediens9}</li>
+            <li class="ingrediens10"> ${wordPressData[4].acf.ingredienser.ingrediens10}</li>
+            <li class="ingrediens11"> ${wordPressData[4].acf.ingredienser.ingrediens11}</li>
+            <li class="ingrediens12"> ${wordPressData[4].acf.ingredienser.ingrediens12}</li>
+            <li class="ingrediens13"> ${wordPressData[4].acf.ingredienser.ingrediens13}</li>
+            <li class="ingrediens14"> ${wordPressData[4].acf.ingredienser.ingrediens14}</li>
+        </ul>
 
     <div class="fremgangsmade">
         <h2 class="overskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.overskrift}</h2>
         <h3 class="underoverskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.underoverskrift}</h3>
-            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step1}</p><br>
-            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step2}</p><br>
+            <ol>
+                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step1}</li><br>
+                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step2}</li><br>
+            </ol>
         <h3 class="underoverskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.underoverskrift1}</h3>
-            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step3}</p><br>
-            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step4}</p><br>
-            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step5}</p>
+            <ol>
+                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step3}</li><br>
+                <li class="steps"> ${wordPressData[4].acf.fremgangsmade.step4}</li><br>
+            </ol>
     </div>
 
     <div class="tips">
@@ -328,4 +331,4 @@ document.querySelector("#content").innerHTML = `
     <p class="tips_felt"> ${wordPressData[4].acf.tips.tips_felt}</p>
     </div>
     `; 
-    } 
+    }

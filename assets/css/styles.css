@@ -392,4 +392,79 @@ input[type="submit"] {
     width: 167.2px; 
     color: #ffffff; 
     background-color: #000000; 
-} 
+}
+
+.recipename {
+    margin-left: 40px;
+    width: 300px;
+}
+
+
+.name_of_author, .antal_personer {
+    display: inline-block;
+}
+.name_of_author {
+    margin-left: 10%;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.antal_personer {
+    margin-left: 45%;
+    font-size: 14px;
+}
+
+.picture_of_dish {
+    object-fit: cover;
+    display: block; 
+    width: 300px; 
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.forberedelsestid, .tilberedningstid, .samlet_tid {
+    display: inline-block;
+    font-size: 14px;
+}
+.forberedelsestid{
+    margin-left: 10%;
+}
+
+.tilberedningstid {
+    margin-left: 34%;
+}
+.samlet_tid {
+    margin-left: 34%;
+}
+
+.ingrediensgruppe {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 10%;
+    list-style-type: none;
+    
+}
+
+.ingrediensgruppe li::before {
+    content: "\2022";  /* \2022 er CSS koden for bullet points */
+    color: #A30900;
+    font-weight: bold;
+  }
+
+.fremgangsmade {
+    margin-left: 40px;
+}
+
+.overskrift_fremgangsmade {
+    margin-top: 40px;
+}
+
+.overskrift_ingrediens {
+    text-align: left;
+    margin-left: 40px;
+}
+
+
+
+  
