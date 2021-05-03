@@ -294,6 +294,7 @@ document.querySelector("#content").innerHTML = `
         <p class="tilberedningstid"> ${wordPressData[4].acf.tid.tilberedningstid}</p>
         <p class="samlet_tid"> ${wordPressData[4].acf.tid.samlet_tid}</p>
     </div>
+    
         <h1 class="overskrift_ingrediens">${wordPressData[4].acf.ingredienser.overskrift}</h1>
         <ul class="ingrediensgruppe"> 
             <li class="ingrediens1"> ${wordPressData[4].acf.ingredienser.ingrediens1}</li>
