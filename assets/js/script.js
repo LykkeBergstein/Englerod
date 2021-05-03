@@ -285,7 +285,7 @@ document.querySelector("#content").innerHTML = `
     function loadopskrift () {
         document.querySelector("#content").innerHTML = `
     <h1 class="recipename"> ${wordPressData[4].acf.recipe_name} </h1>
-    <h2 class="name_of_author"> ${wordPressData[4].acf.author}</h2>
+    <h4 class="name_of_author"> ${wordPressData[4].acf.author}</h4>
     <p class="antal_personer"> ${wordPressData[4].acf.antal} </p> 
     <img class="picture_of_dish" src="${wordPressData[4].acf.picture_of_dish.url}" alt="picture of dish">
     
@@ -313,7 +313,19 @@ document.querySelector("#content").innerHTML = `
     </div>
 
     <div class="fremgangsmade">
-    
+        <h2 class="overskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.overskrift}</h2>
+        <h3 class="underoverskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.underoverskrift}</h3>
+            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step1}</p><br>
+            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step2}</p><br>
+        <h3 class="underoverskrift_fremgangsmade"> ${wordPressData[4].acf.fremgangsmade.underoverskrift1}</h3>
+            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step3}</p><br>
+            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step4}</p><br>
+            <p class="steps"> ${wordPressData[4].acf.fremgangsmade.step5}</p>
+    </div>
+
+    <div class="tips">
+    <h3 class="tips_overskrift"> ${wordPressData[4].acf.tips.overskrift}</h3>
+    <p class="tips_felt"> ${wordPressData[4].acf.tips.tips_felt}</p>
     </div>
     `; 
     } 
