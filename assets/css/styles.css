@@ -468,6 +468,35 @@ input[type="submit"] {
 
 /*subpage opskriftindex*/
 
+.opBox {
+    display: block;
+    background-color: rgb(226, 222, 222);
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+}
 
+.opHeader {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+}
+
+.opImage {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: px;
+    width: 140px;
+    height: 130px;
+    color: black;
+}
+
+.antal, .forberedelse, .samlet, .pris {
+    display: inline-block;
+    font-size: 14px;
+}
 
   
