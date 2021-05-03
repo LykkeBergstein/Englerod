@@ -235,5 +235,15 @@ document.querySelector("#content").innerHTML = `
     <h1> ${wordPressData[1].acf.overskrift} </h1>  
     <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.underoverskrift} </h2> 
     <article class="opskriftindex_beskrivelse"> ${wordPressData[1].acf.beskrivelse} </article> 
+    <h2 class="h2_opskriftindex"> ${wordPressData[1].acf.forar.forar_overskrift} </h2> 
+    <div class="springBox"> 
+        <div class="arrowBoxIndex"> 
+            <img id="leftIndex" src="${wordPressData[1].acf.forar.arrowLeft.url}" alt="pil til venstre"> 
+        </div> 
+        <img id="retForar" src="${wordPressData[1].acf.forar.forar_billede.kategori1.billede.url}" alt="kategori"> 
+        <div class="arrowBoxIndex"> 
+            <img id="rightIndex" src="${wordPressData[1].acf.forar.arrowRight.url}" alt="pil til højre"> 
+        </div> 
+    </div> 
     `; 
     } 

@@ -299,14 +299,15 @@ h1{
     height: 278.14px; 
     margin-top: 124.07px; 
 } 
-#arrowLeft{ 
+
+#arrowLeft , #leftIndex{ 
     display: inline-block; 
     width: 30px; 
     height: 30px; 
     margin-right: 5px; 
 } 
 
-#arrowRight{ 
+#arrowRight , #rightIndex{ 
     display: inline-block; 
     width: 30px; 
     height: 30px; 
@@ -317,6 +318,25 @@ h1{
     display: inline-block; 
     width: 200px; 
     height: 278.17px; 
+} 
+
+.arrowBoxIndex{ 
+    display: block; 
+    height: 150px; 
+    margin-top: 60px; 
+} 
+
+#retForar{  
+    display: inline-block; 
+    width: 303px; 
+    height: 150px; 
+    object-fit: cover; 
+} 
+
+.springBox{ 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
 } 
 
 .kontaktBeskrivelse{ 
