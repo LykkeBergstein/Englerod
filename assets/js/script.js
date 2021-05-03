@@ -61,7 +61,7 @@ document.getElementById("headerContent") .addEventListener("click", () => {
 }); 
  
 //Send request to WordPress 
-const xhttp = new XMLHttpsRequest() ; 
+const xhttp = new XMLHttpRequest() ; 
 //Specify what happens when done 
 xhttp.onreadystatechange = function() { 
     if (this.readyState == 4 && this.status == 200) { 
@@ -87,11 +87,11 @@ xhttp.send(JSON.stringify(apiUserInformation));
  //Omskriver JSON-objektet til string text 
 
 function createPage() { 
-// console.log(`Yay we have a token: ${window.localStorage.getItem("authToken")} `) ; 
+// Der er taget udgangspunkt i Gery's undervisning ; 
 
     //Connect to the endpoint for all the vans(those are in private posts tagged as vans) 
         //If successful 
-        const xhttp = new XMLHttpsRequest(); 
+        const xhttp = new XMLHttpRequest(); 
         //Where to send request 
         xhttp.onreadystatechange = function() { 
             if (this.readyState == 4 && this.status == 200) { 
